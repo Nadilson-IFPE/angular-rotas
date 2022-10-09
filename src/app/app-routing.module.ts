@@ -9,6 +9,24 @@ const routes: Routes = [
     component: TitleComponent,
     pathMatch: 'full',
   },
+  // TrÊS rotas (para testar, comentar o código com setInterval):
+  //portfolio
+  //portfolio/1
+  //portfolio/1/nome_do_usuario
+  {
+    path: 'portfolio',
+    component: CardComponent,
+    children: [
+      {
+        path: ':id',
+        component: CardComponent,
+      },
+      {
+        path: ':id/:token',
+        component: CardComponent,
+      },
+    ],
+  },
   {
     path: 'portfolio/:id',
     component: CardComponent,
