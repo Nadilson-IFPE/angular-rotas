@@ -16,6 +16,9 @@ export class CardComponent implements OnInit {
 
     //Recupera parâmetros de Query. Exemplo: http://localhost:4200/portfolio/1?{name=nadilson&token=123}
     this.parametrizador.queryParams.subscribe((res) => console.log(res));
+
+    //Recupera parâmetros de rotas children. Exemplo: http://localhost:4200/portfolio/1/abc
+    this.parametrizador.firstChild?.params.subscribe((res) => console.log(res));
   }
 
   ngOnInit(): void {
